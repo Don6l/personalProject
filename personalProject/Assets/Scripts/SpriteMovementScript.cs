@@ -5,15 +5,15 @@ using UnityEngine;
 public class SpriteMovementScript : MonoBehaviour
 {
     [SerializeField]
-    private float moveSpeed;
+    private float moveSpeed = 0f;
     [SerializeField]
-    private float jumpForce;
+    private float jumpForce = 0f;
     [SerializeField]
-    private Rigidbody2D myRigidbody;
+    private Rigidbody2D myRigidbody = null;
     [SerializeField]
-    private Collider2D myCollider;
+    private Collider2D myCollider = null;
     [SerializeField]
-    private SpriteRenderer mySpriteRenderer;
+    private SpriteRenderer mySpriteRenderer = null;
 
     private bool canJump = true;
 
