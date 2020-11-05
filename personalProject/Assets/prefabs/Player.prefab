@@ -103,6 +103,7 @@ MonoBehaviour:
   myRigidbody: {fileID: 6066626509584531295}
   myCollider: {fileID: 6066626509584531294}
   mySpriteRenderer: {fileID: 0}
+  gameMasterScript: {fileID: 3067387224320007528, guid: 9357d954f8596174b9c2542456efa735, type: 3}
 --- !u!50 &6066626509584531295
 Rigidbody2D:
   serializedVersion: 4

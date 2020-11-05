@@ -21,11 +21,11 @@ public class MoonLightScript : MonoBehaviour
 
     private IEnumerator CountUp()
     {
-        while (countUpTime < 10)
+        while (countUpTime < 50)
         {
             Debug.Log(countUpTime);
-            moon.intensity += 0.1f;
-            yield return new WaitForSeconds(.1f);
+            moon.intensity += 0.025f;
+            yield return new WaitForSeconds(.15f);
             countUpTime++;
         }
     }

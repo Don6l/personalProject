@@ -13,11 +13,14 @@ public class GameMasterScript : MonoBehaviour
     public bool isGamePaused;
     [SerializeField]
     private Light2D moon;
+    [SerializeField]
+    private AudioSource levelMusic;
 
     void Start()
     {
         moon.intensity = 0;
-        isGamePaused = true; 
+        isGamePaused = true;
+        levelMusic = GetComponent<AudioSource>();
     }
 
     private void FixedUpdate()
@@ -31,14 +34,15 @@ public class GameMasterScript : MonoBehaviour
 
     public void StartButtonClick()
     {
-        Debug.Log("Start game");
+       
         moon.GetComponent<MoonLightScript>().MoonBrighter();
         isGamePaused = false;
+        levelMusic.Play();
     }
 
     public void ExitButtonClick()
     {
-        Debug.Log("Exit Button Clicked");
+        
         Application.Quit();
     }
 

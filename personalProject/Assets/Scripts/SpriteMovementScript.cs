@@ -27,21 +27,31 @@ public class SpriteMovementScript : MonoBehaviour
     private void FixedUpdate()
     {
         if(!gameMasterScript.isGamePaused)
-        { 
+        {
+            
             if (Input.GetKey(KeyCode.D))
             {
-                myRigidbody.velocity = new Vector2(moveSpeed, myRigidbody.velocity.y);
+                
                 mySpriteRenderer.flipX = false;
+                if (!canJump)
+                {
+                    myRigidbody.velocity = new Vector2(moveSpeed, myRigidbody.velocity.y);
+                }
             }
 
             if (Input.GetKey(KeyCode.A))
             {
-                myRigidbody.velocity = new Vector2((moveSpeed*-1), myRigidbody.velocity.y);
+               
                 mySpriteRenderer.flipX = true;
+                if (!canJump)
+                {
+                    myRigidbody.velocity = new Vector2((moveSpeed * -1), myRigidbody.velocity.y);
+                }
             }
 
             if (Input.GetKey(KeyCode.Space))
             {
+               
                 if (canJump)
                 {
                     myRigidbody.velocity = new Vector2(myRigidbody.velocity.x, jumpForce);
