@@ -8,9 +8,8 @@ public class MoonLightScript : MonoBehaviour
     private int countUpTime = 0;
     [SerializeField]
     private Light2D moon;
-    public void MoonBrighter()
-    {
-        Debug.Log("MoonBrighter Start");
+    
+    public void MoonBrighter(){
         StartCoroutine("CountUp");
     }
 
@@ -19,10 +18,9 @@ public class MoonLightScript : MonoBehaviour
 
     }
 
-    private IEnumerator CountUp()
-    {
-        while (countUpTime < 50)
-        {
+    //Counts to 50 and raising intensitiy of moon objects brightness to give spot light affect at begining of scene.
+    private IEnumerator CountUp(){
+        while (countUpTime < 50){
             Debug.Log(countUpTime);
             moon.intensity += 0.025f;
             yield return new WaitForSeconds(.15f);

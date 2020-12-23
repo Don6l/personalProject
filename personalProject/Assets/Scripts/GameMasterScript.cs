@@ -4,8 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Experimental.Rendering.Universal;
 
-public class GameMasterScript : MonoBehaviour
-{
+public class GameMasterScript : MonoBehaviour{
     [SerializeField]
     Canvas menuCanvas;
     [SerializeField]
@@ -16,34 +15,25 @@ public class GameMasterScript : MonoBehaviour
     [SerializeField]
     private AudioSource levelMusic;
 
-    void Start()
-    {
+    void Start(){
         moon.intensity = 0;
         isGamePaused = true;
         levelMusic = GetComponent<AudioSource>();
     }
 
-    private void FixedUpdate()
-    {
-        if (!isGamePaused)
-        { 
+    private void FixedUpdate(){
+        if (!isGamePaused){
             menuCanvas.enabled = false;
-           
         }
     }
 
-    public void StartButtonClick()
-    {
-       
+    public void StartButtonClick(){
         moon.GetComponent<MoonLightScript>().MoonBrighter();
         isGamePaused = false;
         levelMusic.Play();
     }
 
-    public void ExitButtonClick()
-    {
-        
+    public void ExitButtonClick(){
         Application.Quit();
     }
-
 }

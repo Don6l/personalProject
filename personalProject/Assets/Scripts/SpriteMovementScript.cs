@@ -2,8 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SpriteMovementScript : MonoBehaviour
-{
+public class SpriteMovementScript : MonoBehaviour{
     [SerializeField]
     private float moveSpeed = 0f;
     [SerializeField]
@@ -20,18 +19,15 @@ public class SpriteMovementScript : MonoBehaviour
     private bool canJump = true;
    
     
-    private void Awake()
-    {
+    private void Awake(){
         mySpriteRenderer = GetComponent<SpriteRenderer>();
     }
     private void FixedUpdate()
     {
         if(!gameMasterScript.isGamePaused)
         {
-            
             if (Input.GetKey(KeyCode.D))
             {
-                
                 mySpriteRenderer.flipX = false;
                 if (!canJump)
                 {
@@ -39,21 +35,15 @@ public class SpriteMovementScript : MonoBehaviour
                 }
             }
 
-            if (Input.GetKey(KeyCode.A))
-            {
-               
+            if (Input.GetKey(KeyCode.A)){
                 mySpriteRenderer.flipX = true;
-                if (!canJump)
-                {
+                if (!canJump){
                     myRigidbody.velocity = new Vector2((moveSpeed * -1), myRigidbody.velocity.y);
                 }
             }
 
-            if (Input.GetKey(KeyCode.Space))
-            {
-               
-                if (canJump)
-                {
+            if (Input.GetKey(KeyCode.Space)){
+                if (canJump){
                     myRigidbody.velocity = new Vector2(myRigidbody.velocity.x, jumpForce);
                     canJump = false;
                 }      
@@ -61,8 +51,7 @@ public class SpriteMovementScript : MonoBehaviour
         }
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
+    private void OnCollisionEnter2D(Collision2D collision){
         canJump = true;
     }
 }
