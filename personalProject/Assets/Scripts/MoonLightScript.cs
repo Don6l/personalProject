@@ -21,11 +21,9 @@ public class MoonLightScript : MonoBehaviour
     //Counts to 50 and raising intensitiy of moon objects brightness to give spot light affect at begining of scene.
     private IEnumerator CountUp(){
         while (countUpTime < 50){
-            Debug.Log(countUpTime);
             moon.intensity += 0.025f;
             yield return new WaitForSeconds(.15f);
             countUpTime++;
         }
     }
-
 }
